@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-12-25T02:04:16.867Z",
+    "end": "2025-12-25T02:04:19.919Z",
+    "duration": 3052,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "11bb3474-7324-49f0-8c94-dde17badd90a",
+      "title": "",
+      "fullFile": "C:\\web-ui-automation-fundamental\\test\\test-sauce.js",
+      "file": "\\test\\test-sauce.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5525b20e-15d0-4467-85ad-2cfd716b2366",
+          "title": "Tugas Automate Saucedemo",
+          "fullFile": "C:\\web-ui-automation-fundamental\\test\\test-sauce.js",
+          "file": "\\test\\test-sauce.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Tugas Automate Saucedemo\"",
+              "fullTitle": "Tugas Automate Saucedemo \"before all\" hook in \"Tugas Automate Saucedemo\"",
+              "timedOut": false,
+              "duration": 1387,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder().forBrowser('chrome').build();",
+              "err": {},
+              "uuid": "69085c8f-8648-465f-b24a-3a6853e1e6a7",
+              "parentUUID": "5525b20e-15d0-4467-85ad-2cfd716b2366",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Tugas Automate Saucedemo\"",
+              "fullTitle": "Tugas Automate Saucedemo \"after all\" hook in \"Tugas Automate Saucedemo\"",
+              "timedOut": false,
+              "duration": 215,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "5aaa1eec-165f-487a-9489-46fe1b65bf0b",
+              "parentUUID": "5525b20e-15d0-4467-85ad-2cfd716b2366",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Scenario 1: Sukses Login",
+              "fullTitle": "Tugas Automate Saucedemo Scenario 1: Sukses Login",
+              "timedOut": false,
+              "duration": 1134,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get('https://www.saucedemo.com/');\nawait driver.findElement(By.id('user-name')).sendKeys('standard_user');\nawait driver.findElement(By.id('password')).sendKeys('secret_sauce');\nawait driver.findElement(By.id('login-button')).click();\nlet title = await driver.findElement(By.className('title')).getText();\nexpect(title).to.equal('Products');",
+              "err": {},
+              "uuid": "458f83ab-5ee5-4d8f-999f-f3a0e65b0dd6",
+              "parentUUID": "5525b20e-15d0-4467-85ad-2cfd716b2366",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Scenario 2: Urutkan Produk dari A-Z",
+              "fullTitle": "Tugas Automate Saucedemo Scenario 2: Urutkan Produk dari A-Z",
+              "timedOut": false,
+              "duration": 296,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const dropdown = await driver.findElement(By.className('product_sort_container'));\nawait dropdown.click();\nawait driver.findElement(By.xpath(\"//option[@value='az']\")).click();\nlet firstItemName = await driver.findElement(By.className('inventory_item_name')).getText();\nexpect(firstItemName).to.equal('Sauce Labs Backpack');",
+              "err": {},
+              "uuid": "04762ec3-ce38-4899-a208-716a5ab049d1",
+              "parentUUID": "5525b20e-15d0-4467-85ad-2cfd716b2366",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "458f83ab-5ee5-4d8f-999f-f3a0e65b0dd6",
+            "04762ec3-ce38-4899-a208-716a5ab049d1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1430,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.5"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}
